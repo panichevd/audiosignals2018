@@ -1,3 +1,4 @@
+% students: Pavankumar Deshpande, Dmitrii Panichev, Paul Kropke, Daniel Biskup
 function [ p, q ] = func( a, b )
     p = a * b;
     subplot(2,1,1);
