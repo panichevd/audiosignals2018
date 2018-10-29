@@ -1,0 +1,53 @@
+\documentclass[11pt,a4paper]{scrartcl}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{gauss}
+\usepackage{stmaryrd}
+
+\renewcommand{\thesubsection}{Exercise \arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
+\begin{document}
+\author{Pavankumar Deshpande, Dmitrii Panichev, Paul Kröpke, Daniel Biskup}
+\title{Foundations of Audio Signal Processing:}
+\subtitle{Exercise sheet 2}
+\maketitle
+
+\setcounter{section}{2} %sheet 1
+\subsection{} %2.1
+\subsubsection{} %a
+\begin{align}
+2e^{\frac{\pi}{2}i}(1 + i)\\
+For\,a + bi = 1 + i\\
+r=\sqrt{1^2+1^2}=\sqrt{2}\\
+1=\sqrt{2} \cos{\phi}\\
+\cos{\phi}=\frac{1}{\sqrt{2}}\\
+\phi=\frac{\pi}{4}\\
+\\
+2e^{\frac{\pi}{2}i}(1 + i)=2e^{\frac{\pi}{2}i} \sqrt{2}e^{\frac{\pi}{4}i}=2 \sqrt{2} e^{\frac{3\pi}{4}i}
+\end{align}
+
+\subsubsection{} %b
+\begin{align}
+z \cdot \bar{z} = |z|^2\\
+z=a + bi=re^{i\phi}\\
+\bar{z}=a - bi=re^{-i\phi}\\
+z \cdot \bar{z} = re^{i\phi}\cdot re^{-i\phi}=r^2=a^2+b^2=|z|^2
+\end{align}
+
+\subsubsection{} %c
+\begin{align}
+e^{i\alpha}=\cos{\alpha}+i \sin{\alpha}\\
+i \sin{\alpha}=e^{i \alpha} - \cos{\alpha}\\
+e^{-i \alpha}=\cos{(-\alpha)}+i \sin{(-\alpha)}=\cos{\alpha} - i \sin{\alpha}\\
+i \sin{\alpha}=\cos{\alpha} - e^{-i \alpha}\\
+Sum \, of \,(14) \, and \, (16) \, gives \, 2i \sin{\alpha} = e ^{i \alpha} - e^{-i \alpha}\\
+sin{\alpha} = \frac{1}{2i} (e ^{i \alpha} - e^{-i \alpha})
+\end{align}
+
+\end{document}
