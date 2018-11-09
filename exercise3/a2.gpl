@@ -1,0 +1,24 @@
+i = {0.0, 1.0}
+
+set xrange[-6:6]
+set yrange[-1.1:1.5]
+set xlabel "n"
+
+f(x, w)= exp(2*pi*i*w*ceil(x))
+
+set terminal pdf enhanced color solid
+set output "f2.pdf"
+plot real(f(x, 0.5)) t "real part", imag(f(x, 0.5)) t "imaginary part"
+unset output
+
+set output "f3.pdf"
+plot real(f(x, 1.0/3.0)) t "real part", imag(f(x, 1.0/3.0)) t "imaginary part"
+unset output
+
+set output "f4.pdf"
+plot real(f(x, 0.25)) t "real part", imag(f(x, 0.25)) t "imaginary part"
+unset output
+
+set output "f8.pdf"
+plot real(f(x, 0.125)) t "real part", imag(f(x, 0.125)) t "imaginary part"
+unset output
