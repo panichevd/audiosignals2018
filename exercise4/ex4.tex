@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{scrartcl}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{gauss}
+\usepackage{stmaryrd}
+
+\renewcommand{\thesubsection}{Exercise \arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
+
+\begin{document}
+\author{Pavankumar Deshpande, Dmitrii Panichev, Paul Kröpke, Daniel Biskup}
+\title{Foundations of Audio Signal Processing:}
+\subtitle{Exercise sheet 4}
+\maketitle
+
+\setcounter{section}{4} %sheet 1
+\subsection{} %4.1
+\begin{align}
+||\sum\limits_{j=1}^{n}x_j|| = (\sum\limits_{j=1}^{n}x_j, \sum\limits_{i=1}^{n}x_i) = \sum\limits_{j=1}^{n} (x_j, \sum\limits_{i=1}^{n}x_i) = \sum\limits_{j=1}^{n} x_j \cdot \sum\limits_{i=1}^{n} x_i = \sum\limits_{j=1}^{n} \sum\limits_{i=1}^{n} x_j \cdot x_i = \sum\limits_{j=1}^{n}  \sum\limits_{i=1}^{n} (x_i, x_j)\\
+\text{Because of orthogonality of $x$, $(x_i, x_j) = 0$ for $i \neq j$}\\
+\text{So (1) = $\sum\limits_{j=1}^{n} (x_j, x_j) = \sum\limits_{j=1}^{n} ||x_j||^{2}$}
+\end{align}
+
+\subsection{} %4.2
+\subsubsection{} %a
+\begin{align}
+d(x, y) = |x - y| = \sqrt{(Re(x) - Re(y))^2 + (Im(x) - Im(y))^2}\\
+\text{property 1}\\
+(Re(x) - Re(y))^2 \geq 0, (Im(x) - Im(y))^2 \geq 0\, \Rightarrow\\
+\sqrt{(Re(x) - Re(y))^2 + (Im(x) - Im(y))^2} \geq 0\\
+\text{property 2}\\
+\Longrightarrow\\
+\sqrt{(Re(x) - Re(y))^2 + (Im(x) - Im(y))^2}= 0 \Rightarrow (Re(x) - Re(y))^2 + (Im(x) - Im(y))^2 = 0\\
+\Rightarrow Re(x)=Re(y), Im(x)=Im(y) \Rightarrow x=y \\
+\Longleftarrow\\
+x=y \Rightarrow Re(x) = Re(y), Im(x) = Im(y) \Rightarrow \sqrt{(Re(x) - Re(y))^2 + (Im(x) - Im(y))^2}= 0\\
+\text{So, $d(x, y) = 0 \Leftrightarrow x=y$}\\
+\text{property 3}\\
+d(x, y) = \sqrt{(Re(x) - Re(y))^2 + (Im(x) - Im(y))^2} =\\
+\sqrt{((-1) \cdot (Re(x) - Re(y)))^2 + ((-1) \cdot (Im(x) - Im(y)))^2}=\\
+\sqrt{(Re(y) - Re(x))^2 + (Im(y) - Im(x))}^2 = d(y, x)\\
+\text{property \, 4}\\
+\forall x,\,y,\,z\, \in \mathbb{C} \, |x - z| \leq |x - y| + |y - z| \\
+\text{because they can be treated as points on the Eucleadean plane with coordinates Re, Im}\\
+\text{All 4 properties hold, so it is a metric}
+\end{align}
+
+\subsubsection{} %b
+\begin{align}
+d(x, y) = |x| \cdot |y|\\
+\text{Let x=y. Then } d(x ,x) = |x|^2 = Re(x) + Im(x) \text{ not always equals 0.}\\
+\text{Property 3 doesn't hold, so it is not a metric}
+\end{align}
+
+\subsubsection{} %c
+\begin{align}
+d(x, y) = \begin{cases}
+   1 &\text{if y $\neq$ x}\\
+   0 &\text{else}
+\end{cases}\\
+\text{Property 1}\\
+\text{By definition, d(x, y) is always $\geq$ 0}\\
+\text{Property 2}\\
+\text{By definition, d(x, x) $\Leftrightarrow$ 0}\\
+\text{Property 3}\\
+d(x, y) = \begin{cases}
+   1 &\text{if y $\neq$ x}\\
+   0 &\text{else}
+\end{cases}\\
+d(y, x) = \begin{cases}
+   1 &\text{if x $\neq$ y}\\
+   0 &\text{else}
+\end{cases}\\
+d(x, y) = d(y, x)\\
+\text{Property 4}\\
+\text{d(x, z) $\in$ $\{$0, 1$\}$, d(x, y) + d(y, z) $\in$ $\{$0, 1, 2$\}$}\\
+\text{The only case, where $d(x, z) > d(x, y) +d(y, z)$ is $d(x, z) =1$ and $d(x, y) + d(y, z) = 0$}\\
+\text{In this case $x=y=z$, which means $d(x, z) = 0$, which contracicts with $d(x, z) = 1$}\\
+\text{So, this case never happens.}\\
+\text{All 4 properties hold, so it is a metric}
+\end{align}
+\end{document}
