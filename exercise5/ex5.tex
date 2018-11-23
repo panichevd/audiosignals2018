@@ -23,14 +23,40 @@
 \subsection{} %5.1
 \subsubsection{} %a
 \begin{align}
-||f(t)||_1 = \int_{-\infty}^{\infty} f(t) dt = \int_{0}^{1} f(t) dt = \int_{0}^{1} t^{-1/2} dt = \lim_{t \to 1} 2 t^{1/2} - \lim_{t \to 0} 2 t^{1/2} = 2\\
-||f(t)||_2 = \int_{-\infty}^{\infty} f(t)^{2} dt = \int_{0}^{1} f(t)^2 dt = \int_{0}^{1} t^{-1} dt = \lim_{t \to 1} \ln(t) - \lim_{t \to 0} ln(t) = \infty
+||f(t)||_1 = \int_{-\infty}^{+\infty} f(t) dt = \int_{0}^{1} f(t) dt = \int_{0}^{1} t^{-1/2} dt = \lim_{t \to 1} 2 t^{1/2} - \lim_{t \to 0} 2 t^{1/2} = 2\\
+||f(t)||_2 = \int_{-\infty}^{+\infty} f(t)^{2} dt = \int_{0}^{1} f(t)^2 dt = \int_{0}^{1} t^{-1} dt = \lim_{t \to 1} \ln(t) - \lim_{t \to 0} ln(t) = \infty
 \end{align}
 
+\subsubsection{} %b
+\begin{align}
+||f(t)||_1 = \int_{-\infty}^{+\infty} f(t) dt = \int_{0}^{+\infty} f(t) dt = \int_{0}^{+\infty} t^{-1} dt = \lim_{t \to +\infty} \ln(t) - \lim_{t \to 0} \ln(t) = \infty\\
+||f(t)||_2 = \int_{-\infty}^{+\infty} f(t)^{2} dt = \int_{0}^{+\infty} f(t)^2 dt = \int_{0}^{+\infty} t^{-2} dt = \lim_{t \to+ \infty} (-\frac{1}{t}) - \lim_{t \to 0} (-\frac{1}{t}) = 0 + 1 = 1
+\end{align}
+
+\subsection{} %5.1
 \subsubsection{} %a
 \begin{align}
-||f(t)||_1 = \int_{-\infty}^{\infty} f(t) dt = \int_{0}^{\infty} f(t) dt = \int_{0}^{\infty} t^{-1} dt = \lim_{t \to \infty} \ln(t) - \lim_{t \to 0} \ln(t) = \infty\\
-||f(t)||_2 = \int_{-\infty}^{\infty} f(t)^{2} dt = \int_{0}^{\infty} f(t)^2 dt = \int_{0}^{\infty} t^{-2} dt = \lim_{t \to \infty} (-\frac{1}{t}) - \lim_{t \to 0} (-\frac{1}{t}) = 0 + 1 = 1
+||\sum\limits_{n=1}^{+\infty} x(n)||_p = \sum\limits_{n=1}^{+\infty}( e^{n})^{p} = \sum\limits_{n=1}^{+\infty} e^{np} \to +\infty \text{ for } \forall p \in \mathbb{Z}\\
+\text{So $x(n) \not \in l^p(\mathbb{Z}) \forall p \in \mathbb{Z}$}
+\end{align}
+
+\subsubsection{} %b
+\begin{align}
+||\sum\limits_{n=1}^{+\infty} x(n)||_p = \sum\limits_{n=1}^{+\infty}(e^{2\pi i n})^{p} =  \sum\limits_{n=1}^{+\infty} \cos{2\pi pn} + i\sum\limits_{n=1}^{+\infty} \sin{2\pi pn} =  \sum\limits_{n=1}^{+\infty}1 + i  \sum\limits_{n=1}^{+\infty}0 =  \sum\limits_{n=1}^{+\infty}1 \to +\infty\\
+\text{So $x(n) \not \in l^p(\mathbb{Z}) \forall p \in \mathbb{Z}$}
+\end{align}
+
+\subsubsection{} %с
+\begin{align}
+\text{For even $p = 2k$}\\
+||\sum\limits_{n=1}^{+\infty} x(n)||_p = \sum\limits_{n=1}^{+\infty}(\frac{1}{\sqrt{n}})^{p} = \sum\limits_{n=1}^{+\infty}(\frac{1}{\sqrt{n}})^{2k} = \sum\limits_{n=1}^{+\infty}(\frac{1}{n})^{k}\\
+\text{Diverges for $k=1$, converges for $k>1$ as $\zeta(k)$ } \\
+\text{So $x(n) \in l^p(\mathbb{Z})$ $\forall$ even $p > 2$}\\\\
+\text{For odd $p = 2k+1$}\\
+||\sum\limits_{n=1}^{+\infty} x(n)||_p = \sum\limits_{n=1}^{+\infty}(\frac{1}{\sqrt{n}})^{p} = \sum\limits_{n=1}^{+\infty}(\frac{1}{\sqrt{n}})^{2k+1} =  \sum\limits_{n=1}^{+\infty}(\frac{1}{\sqrt{n}})^{2k}\frac{1}{\sqrt{n}} = \sum\limits_{n=1}^{+\infty}(\frac{1}{n})^{k}\frac{1}{\sqrt{n}}\\
+\text{Diverges because $\frac{1}{\sqrt{n}}$ diverges and $\frac{1}{n}$ behaves as for even $p$}\\
+%\text{Diverges because $\frac{1}{\sqrt{n}$ diverges and $\frac{1}{n}$ behaves as for even $p$ } \\
+\text{So $x(n)\not \in l^p(\mathbb{Z})$ $\forall$ odd $p$}
 \end{align}
 
 \end{document}
