@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper]{scrartcl}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{gauss}
+\usepackage{stmaryrd}
+
+\renewcommand{\thesubsection}{Exercise \arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
+
+\begin{document}
+\author{Pavankumar Deshpande, Dmitrii Panichev, Paul Kröpke, Daniel Biskup}
+\title{Foundations of Audio Signal Processing:}
+\subtitle{Exercise sheet65}
+\maketitle
+
+\setcounter{section}{6} %sheet 1
+\subsection{} %6.1
+\subsubsection{} %a
+\begin{align}
+\widehat{f'(w)}=\int_{-\infty}^{+\infty}f'(t)e^{-2 \pi iwt}dt = e^{-2 \pi iwt}f(t)\rvert_{t=-\infty}^{+\infty} - \int_{-\infty}^{+\infty}-2 \pi iwf(t)e^{-2 \pi iwt}dt =\\
+\int_{-\infty}^{+\infty}2 \pi iwf(t)e^{-2 \pi iwt}dt = 2 \pi iw \hat{f(w)}
+\end{align}
+
+\subsubsection{} %b
+\begin{align}
+\widehat{tf(t)} = \int_{-\infty}^{+\infty}e^{-2 \pi iwt}tf(t)dt = -2 \pi i \frac{d}{dw} \int_{-\infty}^{+\infty}e^{-2 \pi iwt}f(t)dt = -2 \pi i f'(w)
+\end{align}
+
+\subsubsection{} %c
+\begin{align}
+\widehat{f'(w)}=\int_{-\infty}^{+\infty}cos(2 \pi wt)f(t)dt + i\int_{-\infty}^{+\infty}(-sin(2 \pi wt)f(t)dt)\\
+Re(\widehat{f'(-w)}) = \int_{-\infty}^{+\infty}cos(-2 \pi wt)f(t)dt = \int_{-\infty}^{+\infty}cos(2 \pi wt)f(t)dt = Re(\widehat{f'(w)}\\
+Im(\widehat{f'(-w)}) = \int_{-\infty}^{+\infty}-sin(-2 \pi wt)f(t)dt = \int_{-\infty}^{+\infty}sin(2 \pi wt)f(t)dt = -Im(\widehat{f'(w)}
+\end{align}
+
+\subsubsection{} %d
+\begin{align}
+\widehat{f'(w)}=\int_{-\infty}^{+\infty}cos(2 \pi wt)f(t)dt - i\int_{-\infty}^{+\infty}sin(2 \pi wt)f(t)dt\\
+\text{Since $f(-t) = f(t)$, $\int_{-\infty}^{+\infty}sin(2 \pi wt)f(t)d = 0$}\\
+\text{So, $\widehat{f'(w)}=\int_{-\infty}^{+\infty}cos(2 \pi wt)f(t)dt$}\\
+\text{$f(t)$ is real, so  $\widehat{f'(w)}$ is real}\\
+\text{$f(t)$ and $cos(2 \pi wt)$ are both even, so  $\widehat{f'(w)}$ is even}
+\end{align}
+
+\subsection{} %5.2
+\subsubsection{} %a
+\begin{align}
+\sqrt{2}\int_{0}^{1} f(t) \cos(2 \pi kt)dt = \sqrt{2} (\int_{1/2}^{1} f(t) \cos(2 \pi kt)dt + \int_{0}^{1/2} f(t) \cos(2 \pi kt)dt) =\\
+\sqrt{2} (\int_{1/2}^{1}\cos(2 \pi kt)dt - \int_{0}^{1/2}\cos(2 \pi kt)dt) = \sqrt(2)(\frac{\sin(2\pi kt)}{2\pi k}\rvert_{t=1/2}^{1} - \frac{\sin(2\pi kt)}{2\pi k}\rvert_{t=0}^{1/2}) =\\
+\sqrt{2}(\frac{\sin(2\pi k) - \sin(\pi k)}{2\pi k} - \frac{\sin(\pi k) - \sin(0)}{2\pi k}) = 0\\
+\sqrt{2}\int_{0}^{1} f(t) \sin(2 \pi kt)dt = \sqrt{2} (\int_{1/2}^{1} f(t) \sin(2 \pi kt)dt + \int_{0}^{1/2} f(t) \sin(2 \pi kt)dt) =\\
+\sqrt{2} (\int_{1/2}^{1}\sin(2 \pi kt)dt - \int_{0}^{1/2}\sin(2 \pi kt)dt) = -\sqrt{2}(\frac{\cos(2\pi k) - \cos(\pi k)}{2\pi k} - \frac{\cos(\pi k) - \cos(0)}{2\pi k}) =\\
+-\sqrt{2}(\frac{4}{2\pi k}) = -\frac{2\sqrt{2}}{\pi k}
+\end{align}
+
+\end{document}
