@@ -167,12 +167,11 @@
 
 \subsection*{(c)}
 
-\text{For $T=1$, $\Omega =\frac{1}{2T}=\frac{1}{2}$Hz signal is reconstructible because $sinc(t)$ is 0.5-bandlimited.}\\
-\text{It is 0.5 bandlimited because $\widehat{f}(w) = 0$ for $|w| > 0.5$}\\
-\text{For $T=\frac{1}{2}$, $\Omega =\frac{1}{2\frac{1}{2}}=1$Hz signal is reconstructible because $sinc(t)$ is 1-bandlimited.}\\
-\text{It is 1 bandlimited because $\widehat{f}(w) = 0$ for $|w| > 1$}\\
-\text{For $T=2$, $\Omega =\frac{1}{2*2}=0.25$Hz signal is not reconstructible because $sinc(t)$ is not 0.25-bandlimited.}\\
-\text{It is not 0.25-bandlimited because $\widehat{f}(w) = $1 for $0.5 > |w| \geq 0.25$}
+\text{By Shannon's theorem, an $\Omega$-bandlimited signal needs to be sampled with rate $ > 2\Omega$ in order to be}
+\text{fully reconstructible. In case of $sinc$, sampling rate should be $> 2*0.5 = 1$ Hz}\\
+\text{For $T=1$ sampling rate $\Omega = \frac{1}{T} = 1$Hz is not $> 1$Hz. Thus, signal is not fully reconstructible}\\
+\text{For $T=\frac{1}{2}$  sampling rate $\Omega = \frac{1}{T} = 2$Hz $> 1$Hz. Thus, signal is fully reconstructible}\\
+\text{For $T=2$  sampling rate $\Omega = \frac{1}{T} = 0.5$Hz $< 1$Hz. Thus, signal is not fully reconstructible}\\
 
 \newpage
 \section*{Exercise 9.2}
